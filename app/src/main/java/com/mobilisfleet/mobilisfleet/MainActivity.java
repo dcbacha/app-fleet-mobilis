@@ -16,11 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String URL = "https://mobilis.eco.br";
+       /* String URL = "https://mobilis.eco.br";
         mWebView = (WebView) this.findViewById(R.id.webView);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.loadUrl(URL);
-        mWebView.setWebViewClient(new WebViewClient());
+        mWebView.setWebViewClient(new WebViewClient());*/
     }
 
     @Override
@@ -32,4 +32,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        String URL = "https://mobilis.eco.br";
+        mWebView = (WebView) this.findViewById(R.id.webView);
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.loadUrl(URL);
+        mWebView.setWebViewClient(new WebViewClient());
+    }
 }
